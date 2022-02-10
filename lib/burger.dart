@@ -1,3 +1,4 @@
+import 'package:app_burger/burger_list.dart';
 import 'package:flutter/material.dart';
 
 import 'categories.dart';
@@ -34,15 +35,17 @@ class _HamburgerState extends State<Hamburger> {
             ),
             Header(),
             Categories(),
+            BurgerList(row: 1,),
+            BurgerList(row: 2,),
           ],
         ),
         extendBody: true,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           elevation: 3,
-          backgroundColor: Colors.teal,
+          backgroundColor: Colors.red,
           onPressed: () {},
-          child: Icon(Icons.home_filled),
+          child: Icon(Icons.home_filled,color: Colors.amber,),
         ),
         bottomNavigationBar: Container(
           // color: Colors.black38,

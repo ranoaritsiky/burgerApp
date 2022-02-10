@@ -14,11 +14,12 @@ class BurgerApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          cardColor: Colors.teal,
           appBarTheme: AppBarTheme(
             color: Colors.teal,
             centerTitle: true,
           ),
-          bottomAppBarColor: Colors.teal),
+          bottomAppBarColor: Colors.black45),
       home: Hamburger(),
     );
   }

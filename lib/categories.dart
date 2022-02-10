@@ -8,7 +8,7 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  int currentSelectedItem=0;
+  int currentSelectedItem = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +27,26 @@ class _CategoriesState extends State<Categories> {
                   Container(
                     height: 90,
                     width: 90,
-                    child: Card(
-                      child: Icon(
-                        Icons.fastfood,
-                        color: Colors.teal,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          currentSelectedItem = index;
+                        });
+                      },
+                      child: Card(
+                        color: index == currentSelectedItem ? Colors.black.withOpacity(0.7):Colors.white ,
+                        child: Icon(
+                          Icons.fastfood,
+                          color: index == currentSelectedItem
+                              ? Colors.white
+                              : Colors.black.withOpacity(0.7),
+                        ),
+                        // color: Colors.black.withOpacity(0.7),
+                        elevation: 3,
+                        margin: EdgeInsets.all(10),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25)),
                       ),
-                      // color: Colors.black.withOpacity(0.7),
-                      elevation: 3,
-                      margin: EdgeInsets.all(10),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(25)),
                     ),
                   )
                 ],
